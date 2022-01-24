@@ -1,0 +1,96 @@
+{% extends "admin/admin.html" %}
+
+{% block content %}
+<section class="content-header">
+            <h1>Dharma college admin system</h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> index page</a></li>
+                <li class="active">control panel</li>
+            </ol>
+        </section>
+<section class="content" id="showcontent">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">memory used ratio</h3>
+                        </div>
+                        <div class="box-body" id="meminfo" style="height:600px;"></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">system settings</h3>
+                        </div>
+                        <form role="form">
+                            <div class="box-body" style="height:600px;">
+                                <div class="form-group">
+                                    <label for="input_speed">limit speed</label>
+                                    <input type="text" class="form-control" id="input_speed" placeholder="please input limit speed！"
+                                           value="512">
+                                </div>
+                                <div class="form-group">
+                                    <label for="input_mem">limit memory</label>
+                                    <input type="text" class="form-control" id="input_mem" placeholder="please input memory limitation！"
+                                           value="10m">
+                                </div>
+                                <div class="form-group">
+                                    <label for="input_num">limit connection numbers</label>
+                                    <input type="text" class="form-control" id="input_num" placeholder="please input connection limitation！"
+                                           value="4">
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">save and restart</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+{% endblock %}
+
+{% block js %}
+<script src="{{url_for('static', filename='js/echarts.min.js')}}"></script>
+<script>
+    var myChart = echarts.init(document.getElementById('meminfo'));
+    option = {
+		backgroundColor: "white",
+		tooltip: {
+			formatter: "{a} <br/>{b} : {c}%"
+		},
+		toolbox: {
+			feature: {
+				restore: {},
+				saveAsImage: {}
+			}
+		},
+		series: [{
+			name: 'memory used ratio',
+			type: 'gauge',
+			detail: {
+				formatter: '{value}%'
+			},
+			data: [{
+				value: 50,
+				name: 'memory used ratio'
+			}]
+		}]
+	};
+    setInterval(function () {
+        option.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
+        myChart.setOption(option, true);
+    },2000);
+
+</script>
+
+
+<script>
+    $(document).ready(function(){
+        $("#g-1").addClass("active");
+        $("#g-1-1").addClass("active");
+     });
+</script>
+{% endblock %}

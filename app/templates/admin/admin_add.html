@@ -1,0 +1,64 @@
+{% extends "admin/admin.html" %}
+
+{% block content %}
+
+<section class="content-header">
+            <h1>Dharma college admin system</h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> admin management</a></li>
+                <li class="active">add admin</li>
+            </ol>
+        </section>
+<section class="content" id="showcontent">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">add admin</h3>
+                        </div>
+                        <form role="form">
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label for="input_name">admin name</label>
+                                    <input type="text" class="form-control" id="input_name" placeholder="please input admin name！">
+                                </div>
+                                <div class="form-group">
+                                    <label for="input_pwd">admin password</label>
+                                    <input type="password" class="form-control" id="input_pwd" placeholder="please input admin password！">
+                                </div>
+                                <div class="form-group">
+                                    <label for="input_re_pwd">repeat password</label>
+                                    <input type="password" class="form-control" id="input_re_pwd"
+                                           placeholder="please input password！">
+                                </div>
+                                <div class="form-group">
+                                    <label for="input_role_id">title</label>
+                                    <select class="form-control" id="input_role_id">
+                                        <option value="0">---please choose admin title---</option>
+                                        <option value="1">xxx</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="box-footer">
+                                <button type="submit" class="btn btn-primary">add</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+{% endblock %}
+
+{% block js %}
+
+
+
+<script>
+    $(document).ready(function(){
+        $("#g-11").addClass("active");
+        $("#g-11-1").addClass("active");
+     });
+</script>
+{% endblock %}

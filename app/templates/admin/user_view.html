@@ -1,0 +1,98 @@
+{% extends "admin/admin.html" %}
+
+{% block css%}
+    <style>
+        .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+            vertical-align:middle;
+            text-align:left;
+        }
+        .td_bd{
+            font-weight:bold;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<section class="content-header">
+            <h1>Dharma college admin system</h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> member management</a></li>
+                <li class="active">view members</li>
+            </ol>
+        </section>
+<section class="content" id="showcontent">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box box-primary">
+                        <div class="box-header">
+                            <h3 class="box-title">member description</h3>
+                        </div>
+                        <div class="box-body table-responsive no-padding">
+                            <table class="table table-hover">
+                                <tbody>
+                                <tr>
+                                    <td class="td_bd">id：</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_bd">name：</td>
+                                    <td>拓荒者</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_bd">email：</td>
+                                    <td>1780316635@qq.com</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_bd">phone：</td>
+                                    <td>13700632835</td>
+                                </tr>
+                                <tr>
+                                    <td class="td_bd">profile pic：</td>
+                                    <td>
+                                        <img data-src="holder.js/100x100" class="img-responsive" alt="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td_bd">registration time：</td>
+                                    <td>
+                                        2017-01-01 12:00:00
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td_bd">uuid：</td>
+                                    <td>
+                                        xxxxxx
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td_bd">description：</td>
+                                    <td>
+                                        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+{% endblock %}
+
+{% block js %}
+
+
+
+<script>
+    $(document).ready(function(){
+        $("#g-5").addClass("active");
+        $("#g-5-1").addClass("active");
+     });
+</script>
+{% endblock %}
